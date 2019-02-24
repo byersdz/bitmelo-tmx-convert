@@ -1,0 +1,33 @@
+{
+  "name": "minnow-tmx-convert",
+  "version": "1.0.0",
+  "description": "A command line tool to convert tmx files to tilemap data for the Minnow game engine",
+  "main": "index.js",
+  "bin": {
+    "snippet": "./src/index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byersdz/minnow-tmx-convert.git"
+  },
+  "keywords": [],
+  "author": "David Byers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byersdz/minnow-tmx-convert/issues"
+  },
+  "homepage": "https://github.com/byersdz/minnow-txm-convert#readme",
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "tmx-parser": "^1.5.0"
+  }
+}
