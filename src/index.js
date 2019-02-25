@@ -2,18 +2,32 @@
 
 const fs = require( 'fs' );
 const tmx = require( 'tmx-parser' );
+const program = require( 'commander' );
 
-console.log( 'convert tmx file' );
+let fileValue = null;
 
-tmx.parseFile( './test.tmx', function( err, map ) {
+program
+  .version( '1.0.0' )
+  .arguments( '<file>' )
+  .action( ( file ) => {
+    fileValue = file;
+  } )
+  .parse( process.argv );
+
+if ( !fileValue ) {
+  console.log( 'No file value specified!' );
+  process.exit( 1 );
+}
+
+const fileName = fileValue.split( '.' )[0];
+
+tmx.parseFile( `./${ fileName }.tmx`, function( err, map ) {
   if ( err ) throw err;
 
   const width = parseInt( map.width );
   const height = parseInt( map.height );
 
   const { tileSets } = map;
-
-  console.log( tileSets );
 
   let mainLayer = null;
   let bg1Layer = null;
@@ -102,7 +116,7 @@ tmx.parseFile( './test.tmx', function( err, map ) {
   }
 
   const outputData = {};
-  outputData.name = 'temp';
+  outputData.name = fileName;
   outputData.width = width;
   outputData.height = height;
   if ( mainLayer ) {
@@ -143,8 +157,6 @@ tmx.parseFile( './test.tmx', function( err, map ) {
 
     console.log( 'Tilemap succesfully created!' );
   } );
-
-  // console.log( map.layers[0].tiles[0].id );
 });
 
 function addTile( x, y, mapIndex, tileLayer, tileArray, tileSets ) {
@@ -175,5 +187,3 @@ function addTile( x, y, mapIndex, tileLayer, tileArray, tileSets ) {
     tileArray.push( 0 );
   }
 }
-
-// function correctedGID( gid )
