@@ -149,7 +149,7 @@ tmx.parseFile( `./${ fileName }.tmx`, function( err, map ) {
 
   const outputString = JSON.stringify( outputData );
 
-  fs.writeFile( './test.map.json', outputString, ( error ) => {
+  fs.writeFile( `./${ fileName }.map.json`, outputString, ( error ) => {
     if ( error ) {
       console.log( error );
       process.exit( 1 );
