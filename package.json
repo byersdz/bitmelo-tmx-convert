@@ -1,7 +1,7 @@
 {
-  "name": "minnow-tmx-convert",
-  "version": "1.0.0",
-  "description": "A command line tool to convert tmx files to tilemap data for the Minnow game engine",
+  "name": "bitmelo-tmx-convert",
+  "version": "1.0.1",
+  "description": "A command line tool to convert tmx files to tilemap data for the Bitmelo game engine",
   "main": "./src/index.js",
   "bin": "./src/index.js",
   "preferGlobal": true,
@@ -10,22 +10,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/byersdz/minnow-tmx-convert.git"
+    "url": "git+https://github.com/byersdz/bitmelo-tmx-convert.git"
   },
   "keywords": [],
   "author": "David Byers",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/byersdz/minnow-tmx-convert/issues"
+    "url": "https://github.com/byersdz/bitmelo-tmx-convert/issues"
   },
-  "homepage": "https://github.com/byersdz/minnow-txm-convert#readme",
+  "homepage": "https://github.com/byersdz/bitmelo-tmx-convert#readme",
   "devDependencies": {
     "eslint": "^5.14.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.16.0"
   },
   "dependencies": {
-    "commander": "^2.19.0",
-    "tmx-parser": "^1.5.0"
+    "commander": "2.19.0",
+    "tmx-parser": "1.5.0"
   }
 }
